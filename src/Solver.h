@@ -34,7 +34,7 @@ public:
     void multiAcc(const double velfactor);
     void joinThreads();
     
-    void stepVelocity(int start, int stop, const double velfactor);
+    void stepVelocity(int i, const double velfactor);
     void stepPosition(const double posfactor);
     
     double stepCluster();

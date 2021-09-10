@@ -47,8 +47,8 @@ void Solver::calcAcc(int start, int stop, const double velfactor) {
                 s[i].a[k] -= s[j].m * apreij *dr[k];
             }
         }
+        stepVelocity(i, velfactor);
     }
-    stepVelocity(start, stop, velfactor);
 }
 
 void Solver::multiAcc(const double velfactor) {
@@ -65,11 +65,9 @@ void Solver::joinThreads() {
     }
 }
 
-void Solver::stepVelocity(int start, int stop, const double velfactor) {
-    for (int i=start; i<stop; i++) {
-        for (int k=0; k<3; k++) {
-            s[i].v[k] += velfactor * eta * s[i].a[k];
-        }
+void Solver::stepVelocity(int i, const double velfactor) {
+    for (int k=0; k<3; k++) {
+        s[i].v[k] += velfactor * eta * s[i].a[k];
     }
 }
 
