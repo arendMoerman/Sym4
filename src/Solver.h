@@ -17,7 +17,7 @@ private:
     const double M_XI   = -0.6626458266981849E-1;
     
     const double LAM2   = (1 - 2*M_LAM) / 2;
-    const double XI_ETA = 1 - 2*(M_XI + M_LAM);
+    const double XI_ETA = 1 - 2*(M_XI + M_ETA);
 public:
     
     std::vector<std::thread> threadPool;
