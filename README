@@ -37,4 +37,6 @@ Example:
 
 Simulates a realization of a warm plummer distribution with N=1000 for 100 time units with 100 threads
 
+After a simulation, CPU time is printed to the screen
+
 Writes output and energies to file
