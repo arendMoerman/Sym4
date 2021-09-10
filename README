@@ -35,7 +35,7 @@ and a snapshot output interval of 1 year
 Example:
 ./Main.exe 0 10 0.01 0.00001 1000 100 plummer
 
-Simulates a realization of a warm plummer distribution with N=1000 for 100 time units with 100 threads
+Simulates a realization of a warm plummer distribution with N=1000 for 10 time units with 100 threads
 
 After a simulation, CPU time is printed to the screen
 
