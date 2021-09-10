@@ -1,0 +1,40 @@
+Fixed-timestep parallel softened N-body code with 4th order symplectic integrator
+To build, simply 'make' in this directory
+
+input:
+
+./Main.exe t_begin t_end dt_snap eta N config param
+
+t_begin         = begin time of simulation
+t_end           = end time
+dt_snap         = snapshot output interval
+eta             = internal timestep
+N               = number of bodies
+numThreads      = number of software threads
+config          = initial condition mode
+param           = parameters
+
+if config = "file", param is the initial condition filename
+filename        = file with initial condition as such:
+                  mass1 x1 y1 z1 vx1 vy1 vz1
+                  mass2 x2 y2 z2 vx2 vy2 vz2
+                  etc...
+                  It is assumed that the initial condition is placed in the 'inputs' folder
+                  
+if config = "cold_plummer", a cold plummer sphere with N bodies is generated.
+if config = "plummer", a warm plummer sphere with N bodies and randomized velocities is generated.
+
+Optimal softening parameter epsilon is calculated internally
+                  
+Example:
+./Main.exe 0 6300 6.3 0.001 10 2 file Solar_Syst.in
+
+Simulates approximately 1000 years of our solar system (including Pluto) with 2 threads
+and a snapshot output interval of 1 year
+
+Example:
+./Main.exe 0 10 0.01 0.00001 1000 100 plummer
+
+Simulates a realization of a warm plummer distribution for 100 time units with 100 threads
+
+Writes output and energies to file
