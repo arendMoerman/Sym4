@@ -1,5 +1,4 @@
 Fixed-timestep parallel softened N-body code with 4th order symplectic integrator
-Aimed towards N > 100 systems, highly inefficient for small N
 To build, simply 'make' in this directory
 
 input:
