@@ -1,6 +1,7 @@
 Fixed-timestep parallel softened N-body code with 4th order symplectic integrator
 To build, simply 'make' in this directory
 
+####################################################### INPUT PARAMETERS ####################################################
 input:
 
 ./Main.exe t_begin t_end dt_snap eta N config param
@@ -40,3 +41,23 @@ Simulates a realization of a warm plummer distribution with N=1000 for 10 time u
 After a simulation, CPU time is printed to the screen
 
 Writes output and energies to file
+
+####################################################### data.out structure #######################################################
+A row represents one body at one snapshot in time. Format is as such:
+
+    mass x y z vx vy vz (just like manual initial condition)
+    
+This means that, for each snapshot, there are N rows corresponding to N bodies. Column 0 is mass, columns 1, 2 and 3 represent x, y and z coordinate
+and columns 5, 6 and 7 represent velocity in x, y and z respectively. Concisely, the data.out file contains an array with 
+
+  (t_end - t_begin) / dt_snap * N       rows
+  
+              7                         columns
+
+##################################################### energies.out structure ######################################################
+This file contains the total energy for the cluster per snapshot interval. Format is a s such:
+
+    timestamp energy
+    
+This means that for each snapshot there is a timestamp and an energy.
+
