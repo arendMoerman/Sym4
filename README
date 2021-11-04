@@ -1,7 +1,8 @@
 Fixed-timestep parallel softened N-body code with 4th order symplectic integrator
 To build, simply 'make' in this directory
 
-####################################################### INPUT PARAMETERS ####################################################
+#################### INPUT PARAMETERS ####################
+
 input:
 
 ./Main.exe t_begin t_end dt_snap eta N config param
@@ -42,7 +43,8 @@ After a simulation, CPU time is printed to the screen
 
 Writes output and energies to file
 
-####################################################### data.out structure #######################################################
+#################### data.out structure ####################
+
 A row represents one body at one snapshot in time. Format is as such:
 
     mass x y z vx vy vz (just like manual initial condition)
@@ -54,7 +56,8 @@ and columns 5, 6 and 7 represent velocity in x, y and z respectively. Concisely,
   
               7                         columns
 
-##################################################### energies.out structure ######################################################
+################## energies.out structure ##################
+
 This file contains the total energy for the cluster per snapshot interval. Format is a s such:
 
     timestamp energy
