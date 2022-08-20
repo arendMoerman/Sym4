@@ -5,7 +5,7 @@ To build, simply 'make' in this directory
 
 input:
 
-./Main.exe t_begin t_end dt_snap eta N config param
+./Main.exe t_begin t_end dt_snap eta N numThreads config param
 
 t_begin         = begin time of simulation
 t_end           = end time
